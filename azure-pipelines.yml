@@ -1,0 +1,27 @@
+pool:
+  name: Hosted Ubuntu 1604
+steps:
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Monitoring Namespace YAML'
+  inputs:
+    PathtoPublish: namespace.yml
+    ArtifactName: YAML
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Cluster Role YAML'
+  inputs:
+    PathtoPublish: clusterRole.yml
+    ArtifactName: YAML
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Config Map YAML'
+  inputs:
+    PathtoPublish: 'prometheus-config-map.yml'
+    ArtifactName: YAML
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Create Deployment YAML'
+  inputs:
+    PathtoPublish: 'prometheus-deployment.yml'
+    ArtifactName: YAML
+
